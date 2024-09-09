@@ -1,4 +1,4 @@
-# This script is created by keshabit to backup and save the files that need frequent improvisions in the Home Assistant
+# This script is created by keshabit to backup and save files that need frequent improvisions in the Home Assistant
 #!/bin/bash
 _loc="/root/backup/daily/files/"
 while read -r _line
