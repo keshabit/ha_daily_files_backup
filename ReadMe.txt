@@ -1,7 +1,10 @@
 ReadMe:
 
 Introduction:
-Home Assistant (HA) config files daily auto backup with their check-sums using a simple shell script. Intended for the basic users who want to keep HA config files safe, these files are mostly improvised manually with higher granularity; there are chances of mistakes or deletion and this will ease the process of recovery or save you from complete misery. This script backs up files defined in "/backup/daily/config.files" configuration file with their relative path. The script throws an error message if the file path is not found and it doesn't process such missing references. Lastly, this is fully tested in standard HA installations.
+Home Assistant (HA) config files daily auto backup with their check-sums using a simple shell script. Intended for the basic users who want to keep HA config files safe, 
+these files are mostly improvised manually with higher granularity; there are chances of mistakes or deletion and this will ease the process of recovery or save you from
+complete misery. This script backs up files defined in "/backup/daily/config.files" configuration file with their relative path. The script throws an error message if the
+file path is not found and it doesn't process such missing references. Lastly, this is fully tested in standard HA installations.
 
 Instructions:
 a. Install "Advanced SSH and Terminal Application" add-on if you haven't done so
