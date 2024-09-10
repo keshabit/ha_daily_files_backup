@@ -13,7 +13,7 @@ Operating System: 13.1
 Frontend: 20240906.0
 
 Advanced SSH and Terminal Application
-Current version: 18.0.0
+version: 18.0.0
 
 Instructions:
 a. Install the "Advanced SSH and Terminal Application" add-on if you haven't done so
