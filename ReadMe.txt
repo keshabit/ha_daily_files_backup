@@ -1,13 +1,23 @@
 ReadMe:
-Home Assistant (HA) config files hourly auto backup with their check-sums using a simple shell script. This will only backup files (with hourly frequency) that are changed. 
-Intended for the basic users who want to keep HA config files safe, these files are mostly improvised manually with higher granularity; there are chances of mistakes or 
-deletion and this will ease the process of recovery or save you from complete misery. This script backs up files defined in the "/backup/hourly/config.files" configuration
-file with their relative path. The script auto-cleans the files older than 30 days. The script throws an error message if the file path is not found and it doesn't process
-such missing references. Lastly, this is fully tested in standard HA installations.
+Home Assistant (HA) config files hourly auto backup with their checksums using a simple shell script. This will only backup the latest copy of the unchanged file(s) and 
+multiple copies of changed files hourly. Intended for the basic users who want to keep HA config files safe, these files are mostly improvised manually with higher 
+granularity; there are chances of mistakes or deletions and this will ease the process of recovery or save you from complete misery. This script works with the "Advanced
+SSH and Terminal Application" (AS&T) add-on. This script saves the files defined in the "/backup/hourly/config.files" configuration file with their relative path. The 
+script throws an error message if the file path is not found and it doesn't process such missing references. The script auto-cleans the files older than 30 days.
+
+Test Setup:
+Home Assitant Versions
+Core: 2024.9.1
+Supervisor: 2024.08.0
+Operating System: 13.1
+Frontend: 20240906.0
+
+Advanced SSH and Terminal Application
+Current version: 18.0.0
 
 Instructions:
-a. Install "Advanced SSH and Terminal Application" add-on if you haven't done so
-b. Open the web interface of installed add-on Terminal Application
+a. Install the "Advanced SSH and Terminal Application" add-on if you haven't done so
+b. Open the web interface of the installed add-on
 c. Create directories: mkdir -p /backup/hourly/files
 d. Download and place the backup.sh and config.files in /backup/hourly directory (by default it backs up most common files: configuration.yaml, scerets.yaml, lovelace, and 
    automations.yaml), you may add more based on your need
