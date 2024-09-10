@@ -2,8 +2,8 @@ ReadMe:
 Home Assistant (HA) config files hourly auto backup with their checksums using a simple shell script. This will only backup the latest copy of the unchanged file(s) and 
 multiple copies of changed files hourly. Intended for the basic users who want to keep HA config files safe, these files are mostly improvised manually with higher 
 granularity; there are chances of mistakes or deletions and this will ease the process of recovery or save you from complete misery. This script works with the "Advanced
-SSH and Terminal Application" (AS&T) add-on. This script saves the files defined in the "/backup/hourly/config.files" configuration file with their relative path. The 
-script throws an error message if the file path is not found and it doesn't process such missing references. The script auto-cleans the files older than 30 days.
+SSH and Terminal Application" add-on. This script saves the files defined in the "/backup/hourly/config.files" configuration file with their relative path. The script
+throws an error message if the file path is not found and it doesn't process such missing references. The script auto-cleans the files older than 30 days.
 
 Test Setup:
 Home Assitant Versions
@@ -23,7 +23,7 @@ d. Download and place the backup.sh and config.files in /backup/hourly directory
    automations.yaml), you may add more based on your need
 e. Change the config.files with their relative paths (if you want to add more files), note: script won't work if not configured with full path, follow the example from the 
    given default configurations
-f. Go back to Advanced SSH and Terminal Application add-on, "Configuration" and at "Init_commands" section paste the following lines:
+f. Go back to Advanced SSH and Terminal Application add-on, "Configuration" tab and at "Init_commands" section paste the following lines (without quotes):
    "if ! pgrep -x "crond" > /dev/null; then echo starting crond; cp /root/backup/hourly/backup.sh /etc/periodic/hourly; crond -b -l 5 -L /var/log/crond.log; fi"
 g. Restart the Advanced SSH and Terminal Application add-on
 
